@@ -25,4 +25,4 @@ kernel.bin: linker.ld $(OBJ_FILES)
 #nasm -f elf32 boot.s -o boot.o
 #gcc -m32 -c kernel.c -o kernel.o
 #ld -m elf_i386 -T linker.ld -o kernel.bin boot.o kernel.o
-#grub-mkrescue -o LinuxFromScratch.iso LinuxFromScratch/
+#grub-mkrescue -o LinuxFromScratch.iso /iknow

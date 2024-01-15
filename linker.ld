@@ -1,6 +1,6 @@
 OUTPUT_FORMAT(elf32-i386)
 OUTPUT_ARCH(i386:i386)
-ENTRY(_start)
+ENTRY(start)
 SECTIONS
 {
     . = 0x0100000; /*Kernel load adress*/
@@ -10,9 +10,9 @@ SECTIONS
         *(.text*)
     }
 
-    .data :
+    .rodata :
     {
-        *(.data)
+        *(.rodata)
     }
 
     .bss :
