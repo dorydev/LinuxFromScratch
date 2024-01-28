@@ -3,6 +3,7 @@ NASMPARAMS = --32
 LDPARAMS = -melf_i386
 
 BUILD_DIR = build
+SRC_DIR = src
 
 all: kernel.bin
 

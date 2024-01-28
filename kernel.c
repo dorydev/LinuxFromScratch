@@ -1,6 +1,9 @@
+
 void kernel_main(void)
 {
-    char* vMem=(char*)0xb8000;
+
+
+    /*char* vMem=(char*)0xb8000;
     vMem[0] = 'H';
     vMem[1] = 0x04;
     vMem[2] = 'E';
@@ -20,5 +23,7 @@ void kernel_main(void)
     vMem[16] = 'L';
     vMem[17] = 0x04;
     vMem[18] = 'D';
-    vMem[19] = 0x04;
+    vMem[19] = 0x04;*/
+
+    //while(1);
 }

@@ -5,18 +5,20 @@ SECTIONS
 {
     . = 0x0100000; /*Kernel load adress*/
 
-    .text :
+    .text BLOCK(4K) : ALIGN(4K)
     {
-        *(.text*)
+        *(.multiboot)
+        *(.text)
     }
 
-    .rodata :
+    .rodata BLOCK(4K) : ALIGN(4K)
     {
         *(.rodata)
     }
 
-    .bss :
+    .bss BLOCK(4K) : ALIGN(4K)
     {
+        *(COMMON)
         *(.bss)
     }
 }
