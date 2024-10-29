@@ -1,15 +1,15 @@
-bits    32
-section         .text
-        align   4
-        dd      0x1BADB002
-        dd      0x00
-        dd      - (0x1BADB002+0x00)
+section .multiboot
+    align 4
+    dd 0x1BADB002            ; Magic number pour Multiboot
+    dd 0x0                   ; Flags
+    dd -(0x1BADB002 + 0x0)   ; Checksum
 
-global start
+section .text
+bits 32
+global _start
 extern kernel_main
 
-start:
-
-    cli
-    call kernel_main
-    hlt
+_start:
+    cli                   ; Désactive les interruptions
+    call kernel_main      ; Appelle la fonction principale du noyau
+    hlt                   ; Arrête le processeur
