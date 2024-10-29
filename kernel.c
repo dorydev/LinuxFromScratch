@@ -1,8 +1,21 @@
 
+
+
 //main function
 void kernel_main(void)
 {
 
+	char* vMem = (char*)0xb8000;
+    const char* hello = "HELLO WORLD";
+
+    for (int i = 0; i < 11; i++) {
+        vMem[i * 2] = hello[i];
+        vMem[i * 2 + 1] = 0x04;
+    }
+
+    while (1);
+}
+    
     /*char* vMem=(char*)0xb8000;
     vMem[0] = 'H';
     vMem[1] = 0x04;
@@ -26,4 +39,3 @@ void kernel_main(void)
     vMem[19] = 0x04;*/
 
     //while(1);
-}
