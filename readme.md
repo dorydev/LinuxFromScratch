@@ -13,25 +13,25 @@ Prerequisite:\
 - qemu
 
 
-Compile assembly & C files in object files with nasm & gcc:\ 
+Compile assembly & C files in object files with nasm & gcc:
 
 ```nasm -f elf32 boot.s -o boot.o```\
-```gcc -m32 -ffreestanding -c kernel.c -o kernel.o```\
+```gcc -m32 -ffreestanding -c kernel.c -o kernel.o```
 
-Link objectfs files:\
+Link objectfs files:
 
-```ld -m elf_i386 -T linker.ld -o kernel.bin boot.o kernel.o```\
+```ld -m elf_i386 -T linker.ld -o kernel.bin boot.o kernel.o```
 
-Create iso file with grub:\
+Create iso file with grub:
 
-```grub-mkrescue -o LinuxFromScratch.iso LinuxFromScratch/*```\
+```grub-mkrescue -o LinuxFromScratch.iso LinuxFromScratch/*```
 
-Launch in QEMU:\
+Launch in QEMU:
 
-Open the project forlder in your terminal and type\
+Open the project forlder in your terminal and type
 
 ```$ cd LinuxFromScratch``` //PATH of .iso's folder\
-```qemu-system-i386 -cdrom LinuxFromScratch.iso```\
+```qemu-system-i386 -cdrom LinuxFromScratch.iso```
 
 GG it works !
 
