@@ -12,6 +12,7 @@ Prerequisite:\
 - xorriso
 - qemu
 
+(Or use `build.sh` when it'll be available)
 
 Compile assembly & C files in object files with nasm & gcc:
 
