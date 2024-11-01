@@ -5,7 +5,7 @@ It'll be upgraded soon, check versions & update ;)
 
 ## How to compile ? ##
 
-Prerequisite:\
+Prerequisite:
 - grub
 - nasm
 - gcc
@@ -34,6 +34,6 @@ Open the project forlder in your terminal and type
 ```$ cd LinuxFromScratch``` //PATH of .iso's folder\
 ```qemu-system-i386 -cdrom LinuxFromScratch.iso```
 
-GG it works !
+**GG it works !**
 
 
