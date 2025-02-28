@@ -13,3 +13,4 @@ _start:
     cli                   
     call kernel_main      
     hlt                   
+

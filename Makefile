@@ -1,4 +1,4 @@
-GCCPARAMS = -m32 -fno-use-cxa-atexit -nostdlib -fno-builtin -fno-rtti -fno-exceptions -fno-leading-underscore
+GCCPARAMS = -m32 -fno-use-cxa-atexit -fno-builtin -fno-rtti -fno-exceptions -fno-leading-underscore
 NASMPARAMS = -f elf32
 LDPARAMS = -m elf_i386
 SRC_DIR = src

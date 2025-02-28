@@ -1,7 +1,3 @@
-
-
-
-//main function
 void kernel_main(void)
 {
 
@@ -12,10 +8,12 @@ void kernel_main(void)
         vMem[i * 2] = hello[i];
         vMem[i * 2 + 1] = 0x04;
     }
-
     while (1);
 }
     
+
+//first try
+
     /*char* vMem=(char*)0xb8000;
     vMem[0] = 'H';
     vMem[1] = 0x04;

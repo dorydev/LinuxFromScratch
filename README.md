@@ -17,7 +17,7 @@ Prerequisite:
 Compile assembly & C files in object files with nasm & gcc:
 
 ```nasm -f elf32 boot.s -o boot.o```\
-```gcc -m32 -ffreestanding -c kernel.c -o kernel.o```
+```gcc -m32 -ffreestanding -nostdlib -c kernel.c -o kernel.o```
 
 Link objectfs files:
 
