@@ -24,14 +24,22 @@ iso: kernel.bin
 	@echo "[+] Creating ISO image"
 	mkdir -p iso/boot/grub
 	cp kernel.bin iso/boot/
-	echo 'set timeout=0' > iso/boot/grub/grub.cfg
+	echo 'set timeout=10' > iso/boot/grub/grub.cfg
 	echo 'set default=0' >> iso/boot/grub/grub.cfg
-	echo 'menuentry "LinuxFromScratch" {' >> iso/boot/grub/grub.cfg
+	echo 'menuentry "1 - Demarrer LinuxFromScratch" {' >> iso/boot/grub/grub.cfg
 	echo '  multiboot /boot/kernel.bin' >> iso/boot/grub/grub.cfg
+	echo '  boot' >> iso/boot/grub/grub.cfg
 	echo '}' >> iso/boot/grub/grub.cfg
-	grub-mkrescue -o dorykernel.iso iso
+	echo 'menuentry "2 - Redemarrer" {' >> iso/boot/grub/grub.cfg
+	echo '  reboot' >> iso/boot/grub/grub.cfg
+	echo '}' >> iso/boot/grub/grub.cfg
+	echo 'menuentry "3 - Arreter" {' >> iso/boot/grub/grub.cfg
+	echo '  halt' >> iso/boot/grub/grub.cfg
+	echo '}' >> iso/boot/grub/grub.cfg
+	grub-mkrescue -o LinuxFromScratch.iso iso
 	rm -rf iso
-	mv dorykernel.iso LinuxFromScratch
+	mkdir -p LinuxFromScratch
+	mv LinuxFromScratch.iso LinuxFromScratch/LinuxFromScratch.iso
 	@echo "[+] ISO image created"
 
 clean:
@@ -40,6 +48,12 @@ clean:
 	rm -f LinuxFromScratch/*.iso
 	@echo "[+] Done."
 
+re: clean all
+
 run: kernel.bin
 	@echo "[+] Running LinuxFromScratch"
 	qemu-system-i386 -kernel kernel.bin
+
+rungrub:
+	@echo "[+] Running LinuxFromScratch with grub"
+	qemu-system-i386 -cdrom LinuxFromScratch/LinuxFromScratch.iso -boot d

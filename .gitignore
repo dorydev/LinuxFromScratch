@@ -1,4 +1,7 @@
 test
-boot.o
-kernel.o
+*.o
+*.a
+*.so
+*.la
+*.bin
 LinuxFromScratch
