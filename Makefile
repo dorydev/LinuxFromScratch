@@ -52,8 +52,8 @@ re: clean all
 
 run: kernel.bin
 	@echo "[+] Running LinuxFromScratch"
-	qemu-system-i386 -kernel kernel.bin
+	qemu-system-x86_64 -kernel kernel.bin
 
 rungrub:
 	@echo "[+] Running LinuxFromScratch with grub"
-	qemu-system-i386 -cdrom LinuxFromScratch/LinuxFromScratch.iso -boot d
+	qemu-system-x86_64 -cdrom LinuxFromScratch/LinuxFromScratch.iso -boot d

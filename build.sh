@@ -32,17 +32,17 @@ install_packages() {
         ubuntu|debian)
             sudo apt-get update
             sudo apt-get install -y gcc xorriso grub-common grub2-common grub-pc \
-                                   nasm qemu-system-x86 build-essential
+                                   nasm qemu-system-x86 build-essential grub-pc-bin
             ;;
         fedora)
             sudo dnf update
             sudo dnf install -y gcc xorriso grub2 grub2-tools \
-                              nasm qemu-system-x86 make
+                              nasm qemu-system-x86 make grub-pc-bin
             ;;
         arch|manjaro)
             sudo pacman -Syu
             sudo pacman -S --noconfirm gcc xorriso grub \
-                                      nasm qemu make
+                                      nasm qemu make grub-pc-bin
             ;;
         *)
             echo -e "${RED}Unsupported operating system: $OS${NC}"
